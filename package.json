@@ -36,5 +36,6 @@
 		"env": {
 			"es6": true
 		}
-	}
+	},
+	"repository": "thriqon/hoppel"
 }
