@@ -41,5 +41,3 @@ module.exports =
             doc.tags.forEach(-> emit(it, 1))
       ...
 
-
-# vim: set expandtab:

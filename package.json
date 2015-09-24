@@ -1,41 +1,41 @@
 {
-	"name": "hoppel",
-	"version": "0.1.0",
-	"description": "Simulate CouchDB MR",
-	"main": "dist/hoppel.js",
-	"jsnext:main": "lib/execute.js",
-	"scripts": {
-		"pretest": "eslint lib test",
-		"test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R progress",
-		"build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
-		"prepublish": "npm run build && npm test"
-	},
-	"keywords": [
-		"mapreduce"
-	],
-	"author": "Jonas Weber <mail@jonasw.de> (http://jonasw.de/)",
-	"license": "ISC",
-	"devDependencies": {
-		"LiveScript": "^1.3.1",
-		"babel": "^5.8.23",
-		"chai": "^3.3.0",
-		"eslint": "^1.5.1",
-		"memdown": "^1.0.0",
-		"mocha": "^2.3.3",
-		"pouchdb": "^4.0.3",
-		"rollup": "^0.16.4",
-		"uglifyjs": "^2.4.10"
-	},
-	"dependencies": {
-		"pouchdb-collate": "^1.2.0"
-	},
-	"eslintConfig": {
-		"ecmaFeatures": {
-			"modules": true
-		},
-		"env": {
-			"es6": true
-		}
-	},
-	"repository": "thriqon/hoppel"
+  "name": "hoppel",
+  "version": "0.1.0",
+  "description": "Simulate CouchDB MR",
+  "main": "dist/hoppel.js",
+  "jsnext:main": "lib/execute.js",
+  "scripts": {
+    "pretest": "eslint lib test",
+    "test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R progress",
+    "build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
+    "prepublish": "npm run build && npm test"
+  },
+  "keywords": [
+    "mapreduce"
+  ],
+  "author": "Jonas Weber <mail@jonasw.de> (http://jonasw.de/)",
+  "license": "ISC",
+  "devDependencies": {
+    "LiveScript": "^1.3.1",
+    "babel": "^5.8.23",
+    "chai": "^3.3.0",
+    "eslint": "^1.5.1",
+    "memdown": "^1.0.0",
+    "mocha": "^2.3.3",
+    "pouchdb": "^4.0.3",
+    "rollup": "^0.16.4",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "pouchdb-collate": "^1.2.0"
+  },
+  "eslintConfig": {
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "env": {
+      "es6": true
+    }
+  },
+  "repository": "thriqon/hoppel"
 }
