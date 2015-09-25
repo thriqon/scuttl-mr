@@ -1,12 +1,13 @@
 {
   "name": "hoppel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simulate CouchDB MR",
   "main": "dist/hoppel.js",
   "jsnext:main": "lib/execute.js",
   "scripts": {
     "pretest": "eslint lib test",
     "test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R progress",
+    "watch-test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R nyan --watch",
     "build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
     "prepublish": "npm run build && npm test"
   },
