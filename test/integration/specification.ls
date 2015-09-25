@@ -8,6 +8,7 @@ module.exports =
       endkey: [false, 1, 3, 'zzz']
       skip: [0, 1, 2]
       inclusive_end: [false]
+      include_docs: [true]
       limit: [0, 1, 2]
       descending: [true]
     docs:

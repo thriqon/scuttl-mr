@@ -50,6 +50,9 @@ describe 'pouchdb vs hoppel' ->
               pouchdbAnswer
                 .catch(-> rows: [])
                 .then ->
+                  it.rows
+                    .filter -> it.doc?
+                    .forEach -> delete it.doc._rev
                   expect(hoppelAnswer).to.be.deep.eql it.rows
 
 function clone obj
