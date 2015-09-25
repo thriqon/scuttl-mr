@@ -1,6 +1,6 @@
 {
   "name": "hoppel",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Simulate CouchDB MR",
   "main": "dist/hoppel.js",
   "jsnext:main": "lib/execute.js",
