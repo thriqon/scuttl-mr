@@ -2,7 +2,7 @@
 var executor = require('../../lib/execute');
 var expect = require('chai').expect;
 
-describe('worker/execute', function () {
+describe('unit/execute', function () {
   beforeEach(function () {
     this.docs = [
     {_id: "foo", a: 0}, {_id: "bar", a: 1}, {_id: "baz", a: 2}

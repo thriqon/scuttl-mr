@@ -2,7 +2,7 @@
 import { default as filter, isBetween } from '../../lib/filter_by_key';
 var chai = require('chai');
 
-describe("worker/filter_by_key", function () {
+describe("unit/filter_by_key", function () {
   beforeEach(function () {
     this.nonTrivialTestCase = [
     {"id":"1","key":1},

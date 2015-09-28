@@ -16,7 +16,7 @@ function shuffleArray(array) {
   return array;
 }
 
-describe("worker/sort", function () {
+describe("unit/sort", function () {
   beforeEach(function () {
     this.testCase = shuffleArray(couchdbDocFixture.docs);
     this.simpleCase = [{}, [], "", 4, 5, true, false, null];
