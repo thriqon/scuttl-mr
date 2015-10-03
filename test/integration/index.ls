@@ -43,7 +43,7 @@ describe 'pouchdb vs hoppel' ->
 
               hoppelMap = "{map: #{mapObj.map.toString!}"
               if mapObj.reduce?
-                hoppelMap += ", reduce: #{typeof mapObj.reduce is 'string' ? '"' + mapObj.reduce + '"' : mapObj.reduce.toString!}"
+                hoppelMap += ", reduce: #{if typeof mapObj.reduce is 'string' then '"' + mapObj.reduce + '"' else mapObj.reduce.toString!}"
               hoppelMap += '}'
               hoppelAnswer = execute @docs, parameters, hoppelMap
 

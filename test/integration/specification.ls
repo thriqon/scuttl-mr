@@ -23,6 +23,33 @@ module.exports =
         map: (doc) ->
           emit(doc.a, doc._id)
       ...
+  * tag: 'summing numbers'
+    isValidParameterCombo: (x) ->
+      if x.group_level?
+        x.reduce && x.group
+      else if x.group?
+        x.reduce
+      else
+        true
+    parameters:
+      reduce: [false]
+      startkey: [1]
+      endkey: [1]
+      group_level: [0,1]
+      group: [true]
+    docs:
+      * _id: "asd", key: 0, n: 1
+      * _id: "bsd", key: 2, n: 3
+      * _id: "csd", key: 0, n: 5
+    maps:
+      * tag: "[summing n]"
+        map: (doc) -> emit(doc.key, doc.n)
+        reduce: (keys, values) ->
+          sum = 0
+          for x of values
+            sum += parseInt x, 10
+          sum
+      ...
   * tag: 'docs with tags'
     isValidParameterCombo: -> true
     parameters:
