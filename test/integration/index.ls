@@ -37,14 +37,18 @@ describe 'pouchdb vs hoppel' ->
             specify "with parameters #{JSON.stringify parameters} is the same answer" ->
               pouchDBMapObj = clone mapObj
               pouchDBMapObj.map = pouchDBMapObj.map.toString!
-              if pouchDBMapObj.reduce
-                pouchDBMapObj.reduce = pouchDBMapObj.reduce.toString!
-              pouchdbAnswer = @pouchdb.query mapObj, parameters
 
               hoppelMap = "{map: #{mapObj.map.toString!}"
-              if mapObj.reduce?
-                hoppelMap += ", reduce: #{if typeof mapObj.reduce is 'string' then '"' + mapObj.reduce + '"' else mapObj.reduce.toString!}"
+              reducer = parameters.reduce_fun or mapObj.reduce
+              if reducer?
+                pouchDBMapObj.reduce = reducer.toString!
+
+                hoppelMap += ", reduce: #{if typeof reducer is 'string' then '"' + reducer + '"' else reducer.toString!}"
+
+
               hoppelMap += '}'
+
+              pouchdbAnswer = @pouchdb.query pouchDBMapObj, parameters
               hoppelAnswer = execute @docs, parameters, hoppelMap
 
               pouchdbAnswer

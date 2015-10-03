@@ -17,5 +17,13 @@ describe('unit/reduce', function () {
       expect(reduce(this.params, function () {return 1;}, [{key: 0, value: 2, id: "3"}]))
         .to.be.eql([{key: null, value: 1}]);
     });
+
+    it('reduces docs via _sum', function () {
+      expect(reduce(this.params, '_sum', [
+        {key: 0, value: 2, id: "3"},
+        {key: 0, value: 3, id: "3"},
+        {key: 0, value: 4, id: "3"},
+      ])).to.eql([{key: null, value: 9}]);
+    });
   });
 });

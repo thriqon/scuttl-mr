@@ -37,6 +37,7 @@ module.exports =
       endkey: [1]
       group_level: [0,1]
       group: [true]
+      reduce_fun: ["_sum", "_count"]
     docs:
       * _id: "asd", key: 0, n: 1
       * _id: "bsd", key: 2, n: 3
