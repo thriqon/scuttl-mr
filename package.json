@@ -28,6 +28,7 @@
     "uglifyjs": "2.4.10"
   },
   "dependencies": {
+    "notevil": "1.0.0",
     "pouchdb-collate": "1.2.0"
   },
   "eslintConfig": {

@@ -50,6 +50,8 @@ module.exports =
           for x of values
             sum += parseInt x, 10
           sum
+      * tag: "[stringy map]"
+        map: "function (doc) { emit(doc.key, doc.n); }"
       ...
   * tag: 'docs with tags'
     isValidParameterCombo: -> true

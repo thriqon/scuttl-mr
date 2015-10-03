@@ -35,7 +35,12 @@ function buildPouchdbQuery(parameters, mapObj) {
 }
 
 function buildHoppelQuery(parameters, mapObj) {
-  let hoppelMap = "{map: " + mapObj.map.toString();
+  let hoppelMap = "{map: ";
+  if (typeof mapObj.map === 'string') {
+    hoppelMap += '"' + mapObj.map + '"';
+  } else {
+    hoppelMap += mapObj.map.toString();
+  }
   let reducer = parameters.reduce_fun || mapObj.reduce;
   if (reducer) {
     if (typeof reducer === 'string') {
