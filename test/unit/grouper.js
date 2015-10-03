@@ -1,5 +1,5 @@
 
-import { default as group, coerceValueByGroupLevel as coerce } from '../../lib/group';
+import { default as group, coerceValueByGroupLevel as coerce } from '../../lib/reduce/group';
 import applyDefaultParams from '../../lib/default-params';
 import { expect } from 'chai';
 

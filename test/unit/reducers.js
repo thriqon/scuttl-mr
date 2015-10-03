@@ -1,5 +1,5 @@
 
-import { sum, count } from '../../lib/reducers';
+import { sum, count } from '../../lib/reduce/builtins';
 import { expect } from 'chai';
 
 describe('unit/reducers', function () {
