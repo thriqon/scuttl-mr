@@ -24,7 +24,7 @@
     "memdown": "1.1.0",
     "mocha": "2.3.3",
     "pouchdb": "4.0.3",
-    "rollup": "0.18.2",
+    "rollup": "0.18.3",
     "uglifyjs": "2.4.10"
   },
   "dependencies": {
