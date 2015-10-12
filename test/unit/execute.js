@@ -13,6 +13,24 @@ describe('unit/execute', function () {
     };
   });
 
+  describe('with include_docs and specific key', function () {
+    it('returns a document as requested', function () {
+      this.params.include_docs = true;
+      this.params.key = 1;
+      var res = executor(this.docs, this.params, this.viewCode);
+      expect(res).to.be.an('array').and.to.have.length(1);
+      expect(res[0]).to.be.deep.eql({
+        key: 1,
+        id: "bar",
+        value: "bar",
+        doc: {
+          _id: "bar",
+          a: 1
+        }
+      });
+    });
+  });
+
   describe('with default parameters', function () {
     it('returns all documents transformed', function () {
       var res = executor(this.docs, this.params, this.viewCode);
@@ -46,6 +64,17 @@ describe('unit/execute', function () {
       expect(res).to.be.an('array').and.to.have.length(2);
       expect(res[0]).to.be.deep.eql({key: 2, value: "baz", id: "baz"});
       expect(res[1]).to.be.deep.eql({key: 1, value: "bar", id: "bar"});
+    });
+  });
+
+  describe('with key', function () {
+    beforeEach(function () {
+      this.params.key = 1;
+    });
+    it('returns documents as documented', function () {
+      var res = executor(this.docs, this.params, this.viewCode);
+      expect(res).to.be.an('array').and.to.have.length(1);
+      expect(res[0]).to.be.deep.eql({key: 1, value: "bar", id: "bar"});
     });
   });
 });

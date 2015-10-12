@@ -1,8 +1,8 @@
 
-import { default as filter, isBetween } from '../../lib/filter_by_key';
+import { default as filter, isBetween } from '../../lib/filter_by_interval';
 var chai = require('chai');
 
-describe("unit/filter_by_key", function () {
+describe("unit/filter_by_interval", function () {
   beforeEach(function () {
     this.nonTrivialTestCase = [
     {"id":"1","key":1},

@@ -53,6 +53,28 @@ module.exports =
       * tag: "[stringy map]"
         map: "function (doc) { emit(doc.key, doc.n); }"
       ...
+  * tag: 'by key'
+    isValidParameterCombo: -> true
+    parameters:
+      key: [1, 5]
+    docs:
+      * _id: "asd", key: 1
+      * _id: "bsd", key: 2
+    maps:
+      * tag: "[indexing]"
+        map: (doc) -> emit(doc.key, null)
+      ...
+  * tag: 'by keys'
+    isValidParameterCombo: -> true
+    parameters:
+      keys: [[1, 2], [1, 5], [6]]
+    docs:
+      * _id: "asd", key: 1
+      * _id: "bsd", key: 2
+    maps:
+      * tag: "[indexing]"
+        map: (doc) -> emit(doc.key, null)
+      ...
   * tag: 'docs with tags'
     isValidParameterCombo: -> true
     parameters:
