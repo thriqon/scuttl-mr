@@ -17,8 +17,7 @@ API
 ---
 
 ```javascript
-//var hoppel = require('hoppel');
-var hoppel = require('./dist/hoppel');
+var hoppel = require('hoppel');
 
 var docs = [
   {
