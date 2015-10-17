@@ -7,16 +7,12 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "npm run unit-test && npm run coverage && npm run integration-test",
-
     "build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
     "prepublish": "npm run build && npm test",
-
     "coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers ls:LiveScript,js:babel/register test/unit && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
     "lint": "eslint lib test",
-
     "unit-test": "mocha --compilers js:babel/register test/unit -R progress",
     "integration-test": "mocha --compilers ls:LiveScript,js:babel/register test/integration -R progress",
-
     "watch-test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R nyan --watch"
   },
   "keywords": [
@@ -29,7 +25,7 @@
     "babel": "5.8.23",
     "chai": "3.3.0",
     "eslint": "1.6.0",
-    "istanbul": "^0.3.22",
+    "istanbul": "^0.4.0",
     "memdown": "1.1.0",
     "mocha": "2.3.3",
     "pouchdb": "5.0.0",
