@@ -27,7 +27,7 @@
     "eslint": "1.9.0",
     "istanbul": "0.4.0",
     "memdown": "1.1.0",
-    "mocha": "2.3.3",
+    "mocha": "2.3.4",
     "pouchdb": "5.0.0",
     "rollup": "0.20.5",
     "uglifyjs": "2.4.10"
