@@ -21,16 +21,16 @@
   "author": "Jonas Weber <mail@jonasw.de> (http://jonasw.de/)",
   "license": "ISC",
   "devDependencies": {
-    "LiveScript": "1.3.1",
-    "babel-cli": "6.3.17",
-    "chai": "3.4.1",
-    "eslint": "1.10.3",
-    "istanbul": "0.4.1",
-    "memdown": "1.1.0",
-    "mocha": "2.3.4",
-    "pouchdb": "5.0.0",
-    "rollup": "0.21.2",
-    "uglifyjs": "2.4.10"
+    "LiveScript": "^1.3.1",
+    "babel-cli": "^6.3.17",
+    "chai": "^3.4.1",
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.1",
+    "memdown": "^1.1.0",
+    "mocha": "^2.3.4",
+    "pouchdb": "^5.0.0",
+    "rollup": "^0.21.2",
+    "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "notevil": "1.0.0",
