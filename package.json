@@ -11,7 +11,7 @@
 
     "build": "node scripts/build.js",
     "coverage": "npm run run-coverage && npm run check-coverage",
-    "run-coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha --compilers ls:LiveScript test/unit",
+    "run-coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --compilers ls:LiveScript test/unit",
     "check-coverage": "istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
     "lint": "eslint lib test",
     "unit-test": "babel-node ./node_modules/.bin/_mocha test/unit -R progress",
