@@ -6,14 +6,16 @@
   "jsnext:main": "lib/execute.js",
   "scripts": {
     "pretest": "npm run lint",
-    "test": "npm run unit-test && npm run coverage && npm run integration-test",
-    "build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
     "prepublish": "npm run build && npm test",
-    "coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers ls:LiveScript,js:babel/register test/unit && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
+    "test": "npm run unit-test && npm run coverage && npm run integration-test",
+
+    "build": "node scripts/build.js",
+    "coverage": "npm run run-coverage && npm run check-coverage",
+    "run-coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha --compilers ls:LiveScript test/unit",
+    "check-coverage": "istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
     "lint": "eslint lib test",
-    "unit-test": "mocha --compilers js:babel/register test/unit -R progress",
-    "integration-test": "mocha --compilers ls:LiveScript,js:babel/register test/integration -R progress",
-    "watch-test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R nyan --watch"
+    "unit-test": "babel-node ./node_modules/.bin/_mocha test/unit -R progress",
+    "integration-test": "babel-node ./node_modules/.bin/_mocha --compilers ls:LiveScript test/integration -R progress"
   },
   "keywords": [
     "mapreduce"
@@ -22,14 +24,18 @@
   "license": "ISC",
   "devDependencies": {
     "LiveScript": "^1.3.1",
-    "babel-cli": "^6.3.17",
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
     "chai": "^3.4.1",
-    "eslint": "^1.10.3",
+    "eslint": "^2.1.0",
+    "isparta": "^4.0.0",
     "istanbul": "^0.4.1",
     "memdown": "^1.1.0",
     "mocha": "^2.3.4",
     "pouchdb": "^5.0.0",
     "rollup": "^0.25.1",
+    "rollup-plugin-babel": "^2.3.9",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
@@ -37,12 +43,17 @@
     "pouchdb-collate": "1.2.0"
   },
   "eslintConfig": {
-    "ecmaFeatures": {
-      "modules": true
+    "parserOptions": {
+      "sourceType": "module"
     },
     "env": {
       "es6": true
     }
   },
-  "repository": "thriqon/hoppel"
+  "repository": "thriqon/hoppel",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
 }
