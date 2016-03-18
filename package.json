@@ -43,7 +43,9 @@
     },
     "env": {
       "es6": true
-    },
+    }
+  },
+  "babel": {
     "plugins": [
       "transform-es2015-modules-commonjs"
     ]
