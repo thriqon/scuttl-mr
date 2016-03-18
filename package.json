@@ -9,11 +9,11 @@
     "test": "npm run unit-test && npm run coverage && npm run integration-test",
     "build": "mkdir -p dist && rollup lib/execute.js | babel -o dist/hoppel.js",
     "prepublish": "npm run build && npm test",
-    "coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers ls:LiveScript,js:babel/register test/unit && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers ls:LiveScript,js:babel-register test/unit && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
     "lint": "eslint lib test",
-    "unit-test": "mocha --compilers js:babel/register test/unit -R progress",
-    "integration-test": "mocha --compilers ls:LiveScript,js:babel/register test/integration -R progress",
-    "watch-test": "mocha --compilers ls:LiveScript,js:babel/register test/unit test/integration -R nyan --watch"
+    "unit-test": "mocha --compilers js:babel-register test/unit -R progress",
+    "integration-test": "mocha --compilers ls:LiveScript,js:babel-register test/integration -R progress",
+    "watch-test": "mocha --compilers ls:LiveScript,js:babel-register test/unit test/integration -R nyan --watch"
   },
   "keywords": [
     "mapreduce"
@@ -22,6 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "LiveScript": "^1.3.1",
+    "babel-register": "^6.6.5",
     "babel-cli": "^6.6.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.0",
     "chai": "^3.4.1",
