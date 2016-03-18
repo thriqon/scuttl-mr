@@ -1,6 +1,6 @@
 
-var executor = require('../../lib/execute');
-var expect = require('chai').expect;
+import executor from '../../lib/execute';
+import { expect } from 'chai';
 
 describe('unit/execute', function () {
   beforeEach(function () {
