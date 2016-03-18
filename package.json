@@ -7,7 +7,7 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "npm run unit-test && npm run coverage && npm run integration-test",
-    "build": "mkdir -p dist && rollup lib/execute.js | babel -m common -o dist/hoppel.js",
+    "build": "mkdir -p dist && rollup lib/execute.js | babel -o dist/hoppel.js",
     "prepublish": "npm run build && npm test",
     "coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers ls:LiveScript,js:babel/register test/unit && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100",
     "lint": "eslint lib test",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "LiveScript": "^1.3.1",
     "babel-cli": "^6.3.17",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.0",
     "chai": "^3.4.1",
     "eslint": "^1.10.3",
     "istanbul": "^0.4.1",
@@ -42,7 +43,10 @@
     },
     "env": {
       "es6": true
-    }
+    },
+    "plugins": [
+      "babel-plugin-transform-es2015-modules-commonjs"
+    ]
   },
   "repository": "thriqon/hoppel"
 }
