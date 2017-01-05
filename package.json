@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "notevil": "1.0.0",
-    "pouchdb-collate": "6.0.7"
+    "pouchdb-collate": "6.1.1"
   },
   "eslintConfig": {
     "ecmaFeatures": {
