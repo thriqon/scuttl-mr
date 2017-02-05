@@ -33,7 +33,7 @@
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
-    "notevil": "1.0.0",
+    "notevil": "1.1.0",
     "pouchdb-collate": "6.0.7"
   },
   "eslintConfig": {
