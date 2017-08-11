@@ -29,7 +29,7 @@
     "memdown": "^1.1.0",
     "mocha": "^3.0.0",
     "pouchdb": "^6.0.5",
-    "rollup": "^0.36.0",
+    "rollup": "^0.46.2",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
